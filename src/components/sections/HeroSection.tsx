@@ -1,8 +1,21 @@
-export default function HeroSection() {
+import { memo } from "react";
+import { useMediaQuery } from "usehooks-ts";
+
+ function HeroSection() {
+const bigScreen = useMediaQuery("(min-width: 1624px)");
+
+
   return (
-    <section className="relative w-full overflow-hidden" style={{ minHeight: "clamp(500px, 48.89vw, 704px)" }}>
+    <section className="relative w-full  flex items-center justify-center" style={{ minHeight: "clamp(500px, 48.89vw, 704px)" }}>
       {/* SVG gradient background - exact Figma paths */}
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 704" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none select-none"
+        viewBox={`0 0 1440 ${bigScreen ? 900 : 704}`}
+        preserveAspectRatio="xMidYMid slice"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -30,7 +43,7 @@ export default function HeroSection() {
       </svg>
 
       {/* Content overlay */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-6 md:px-12 pt-36 pb-32 md:pt-44 md:pb-40 lg:pt-52 lg:pb-48">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center w-full max-w-4xl px-6 md:px-12 pt-36 pb-32 md:pt-44 md:pb-40 lg:pt-52 lg:pb-48">
         <h1 className="text-white font-bold leading-tight mb-6 max-w-3xl" style={{ fontSize: "clamp(28px, 3.68vw, 53px)" }}>
           RemoteRecruit&apos;s Difference
         </h1>
@@ -42,3 +55,6 @@ export default function HeroSection() {
     </section>
   );
 }
+
+
+export default memo(HeroSection)
