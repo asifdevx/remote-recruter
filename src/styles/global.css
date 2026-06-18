@@ -113,6 +113,20 @@
   --tracking-wide: calc(var(--tracking-normal) + 0.025em);
   --tracking-wider: calc(var(--tracking-normal) + 0.05em);
   --tracking-widest: calc(var(--tracking-normal) + 0.1em);
+
+  
+  --animate-fade-in-up: fade-in-up 700ms ease-out both;
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(1.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 html,
@@ -122,6 +136,14 @@ body,
   font-family: var(--font-sans);
   scrollbar-width: thin;
   scrollbar-color: #94a3b8 #f1f5f9;
+}
+
+/* Custom Animation Delay Utilities */
+.animate-delay-150 {
+  animation-delay: 150ms;
+}
+.animate-delay-300 {
+  animation-delay: 300ms;
 }
 
 ::-webkit-scrollbar {
@@ -142,9 +164,7 @@ body,
   background: #64748b;
 }
 
-
-
 .footer-section {
-  @apply w-full bg-top bg-cover bg-no-repeat  pb-8 flex flex-col justify-between;
+  @apply w-full bg-top bg-cover bg-no-repeat pb-8 flex flex-col justify-between;
   background-image: url("/assets/footer/bg.webp");
 }

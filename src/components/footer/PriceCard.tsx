@@ -23,14 +23,14 @@ export const PricingCard = ({ isPremium = false, features, ctaLabel, price, subt
           {isPremium && (
             <div className="sm:w-[90%] w-1/3 absolute -top-5 px-1 py-1 rounded-full bg-[#C2EEFF] backdrop-blur-xs border border-blue-100 flex items-center gap-1.5 shadow-sm drop-shadow-[0_0_12px_rgba(30,62,133,0.25)]">
               <div className="py-2 px-3 bg-white rounded-full">
-                <img src="assets/icon/premium.svg" alt="Premium" className="" />
+                <img src="assets/icon/premium.svg" alt="Premium" className="w-full h-full object-cover" />
               </div>
               <span className="text-[16px] font-bold text-slate-700 tracking-wide uppercase">Premium</span>
             </div>
           )}
           <div className="flex min-h-18 flex-col justify-center items-center">
             <span className={`text-3xl font-black ${isPremium ? "text-[#1d4ed8]" : "text-[#3b82f6]"}`}>{price}</span>
-            <span className={`font-semibold text-lg ${isPremium ? "text-xs text-slate-400" : "text-sm uppercase text-slate-400"}`}>{subtitle}</span>
+            <span className={`font-semibold text-lg text-[#11142D]/39 ${isPremium ? "text-xs " : "text-sm uppercase "}`}>{subtitle}</span>
           </div>
         </div>
 

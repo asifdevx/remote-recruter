@@ -1,24 +1,13 @@
-import { cn } from "@/utils/cn";
-import { memo, useEffect, useMemo, useState } from "react";
+import { memo } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
 function HeroSection() {
-  const [mounted, setMounted] = useState(false);
   const bigScreen = useMediaQuery("(min-width: 1624px)");
-  const minHeight: number = useMemo(() => {
-    if (bigScreen) return 820;
-    return 704;
-  }, [bigScreen]);
-
-useEffect(() => {
-  // eslint-disable-next-line react-hooks/set-state-in-effect
-  setMounted(true);
-}, []);
   return (
     <section className="relative w-full  flex items-center justify-center bg-white min-h-176 2xl:min-h-205">
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none select-none"
-        viewBox={`0 0 1440 ${minHeight}`}
+        viewBox={`0 0 1440 ${bigScreen?820:704}`}
         preserveAspectRatio="xMidYMid slice"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -52,17 +41,10 @@ useEffect(() => {
 
       {/* Content overlay */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center w-full max-w-4xl px-6 md:px-12 pt-36 pb-32 md:pt-44 md:pb-40 lg:pt-52 lg:pb-48">
-        <h1
-          className={cn("text-white font-bold leading-tight mb-6 max-w-3xl transition-all duration-700 ease-out", mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6")}
-          style={{ fontSize: "clamp(28px, 3.68vw, 53px)" }}
-        >
+        <h1 className="text-white font-bold leading-tight mb-6 max-w-3xl animate-fade-in-up" style={{ fontSize: "clamp(28px, 3.68vw, 53px)" }}>
           RemoteRecruit&apos;s Difference
         </h1>
-        <p
-          className={cn("text-white font-medium leading-[1.6] max-w-3xl transition-all duration-700 ease-out delay-150", mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6")}
-          style={{ fontSize: "clamp(15px, 1.39vw, 20px)", opacity: 0.8 }}
-        >
-         
+        <p className="text-white font-medium leading-[1.6] max-w-3xl animate-fade-in-up animate-delay-150" style={{ fontSize: "clamp(15px, 1.39vw, 20px)", opacity: 0.8 }}>
           RemoteRecruit is connecting the world with an easy-to-use platform that lets full-time, part-time, and freelance workers showcase their talents to businesses that need them. With no
           paywalls, no fees, and no barriers, there&apos;s nothing but you, your talents, and the next step in your career.
         </p>
