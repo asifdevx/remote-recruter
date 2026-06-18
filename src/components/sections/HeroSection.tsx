@@ -1,15 +1,18 @@
-import { memo } from "react";
+import { memo, useMemo } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
- function HeroSection() {
-const bigScreen = useMediaQuery("(min-width: 1624px)");
-
+function HeroSection() {
+  const bigScreen = useMediaQuery("(min-width: 1624px)");
+  const minHeight: number = useMemo(() => {
+    if (bigScreen) return 820;
+    return 704;
+  }, [bigScreen]);
 
   return (
-    <section className="relative w-full  flex items-center justify-center bg-white" style={{ minHeight: "clamp(500px, 48.89vw, 704px)" }}>
-       <svg
+    <section className="relative w-full  flex items-center justify-center bg-white min-h-176 2xl:min-h-205">
+      <svg
         className="absolute inset-0 w-full h-full pointer-events-none select-none"
-        viewBox={`0 0 1440 ${bigScreen ? 900 : 704}`}
+        viewBox={`0 0 1440 ${minHeight}`}
         preserveAspectRatio="xMidYMid slice"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -55,5 +58,4 @@ const bigScreen = useMediaQuery("(min-width: 1624px)");
   );
 }
 
-
-export default memo(HeroSection)
+export default memo(HeroSection);
