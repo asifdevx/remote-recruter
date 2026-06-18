@@ -42,7 +42,7 @@ export default function FeatureRow({ badge, title, description, imageSrc, imageA
           )}
         >
           <div className="relative w-full max-w-120 transition-transform duration-500 hover:scale-[1.02]">
-            <img src={imageSrc} alt={imageAlt ?? title} className="w-full h-auto object-contain drop-shadow-xl" loading="eager" />
+            <img src={imageSrc} alt={imageAlt ?? title} loading="eager"  width={1200} height={800} className="w-full h-auto object-contain drop-shadow-xl"/>
           </div>
         </div>
       </div>
