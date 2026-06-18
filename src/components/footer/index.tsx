@@ -1,24 +1,51 @@
-import { Link } from 'react-router-dom';
+"use client";
 
-const Footer = () => {
- return (
-   <footer className="bg-brand-dark text-white/70 py-10 px-6 md:px-12">
-     <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-       <span className="text-sm">&copy; {new Date().getFullYear()} RemoteRecruit. All rights reserved.</span>
-       <div className="flex gap-6 text-sm">
-         <Link to="/privacy" className="hover:text-white transition-colors">
-           Privacy
-         </Link>
-         <Link to="/terms" className="hover:text-white transition-colors">
-           Terms
-         </Link>
-         <Link to="/contact" className="hover:text-white transition-colors">
-           Contact
-         </Link>
-       </div>
-     </div>
-   </footer>
- );
+import { pricingPlans, socials } from "@/config/Footer";
+import { PricingCard } from "./PriceCard";
+
+export default function Footer() {
+  return (
+    <footer className="relative footer-section pt-12">
+      <div className="w-full max-w-7xl mx-auto flex flex-col items-center mb-20 -mt-24 sm:-mt-32 lg:-mt-40 relative z-10 px-6">
+        <h2 className="text-[#11142D] font-semibold text-3xl sm:text-4xl text-center mb-12 lg:mb-16 tracking-tight">Help Is One Click Away</h2>
+
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-stretch justify-center gap-8 lg:flex-row lg:gap-6">
+          {pricingPlans.map((plan) => (
+            <div key={plan.id} className="flex flex-1">
+              <PricingCard isPremium={plan.isPremium} price={plan.price} subtitle={plan.subtitle} features={plan.features} ctaLabel={plan.ctaLabel} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="w-full max-w-7xl mx-auto flex flex-col gap-10 px-6 pb-8">
+        <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-6 pb-2">
+          {/* Logo brand structure */}
+          <div className="flex items-center gap-1.5 select-none text-white font-black text-2xl tracking-tight pointer-events-none">
+            <img src="/assets/logo/RemoteRecruit.png" alt="RemoteRecruit Logo" className="w-full h-full object-contain" />
+          </div>
+
+          {/* Social Links Grid */}
+          <div className="flex items-center gap-3">
+            {socials.map(({ href, Icon }, idx) => (
+              <a
+                key={idx}
+                href={href}
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {Icon && <Icon size={15} className="text-white" />}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom divider and brand asset marker */}
+        <div className="w-full border-t border-white/10 h-full pt-10 items-center flex justify-center">
+          <img src="/assets/logo/logo.png" alt=" Logo" className="w-10 h-10 object-contain" />
+        </div>
+      </div>
+    </footer>
+  );
 }
-
-export default Footer
