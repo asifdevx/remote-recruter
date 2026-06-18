@@ -1,9 +1,18 @@
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import { Outlet } from "react-router-dom";
 
 export default function MainLayout() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 transition-colors duration-200">
-      <Outlet />
-    </div>
+    <>
+      <Header />
+      <main id="main-content">
+        <Outlet />
+      </main>
+      <div className="pt-32">
+
+      <Footer/>
+      </div>
+    </>
   );
 }

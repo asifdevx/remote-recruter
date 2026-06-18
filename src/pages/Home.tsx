@@ -1,22 +1,29 @@
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import FAQ from "@/components/sections/FAQ";
-import Feature from "@/components/sections/Feature";
+import { lazy, Suspense } from "react";
+
+import { FAQSkeleton, FeatureSkeleton, SignUpAdSkeleton } from "@/components/common/Skeleton";
 import HeroSection from "@/components/sections/HeroSection";
-import SignUpAd from "@/components/sections/SignUpAd";
+
+const Feature = lazy(() => import("@/components/sections/Feature"));
+const FAQ = lazy(() => import("@/components/sections/FAQ"));
+const SignUpAd = lazy(() => import("@/components/sections/SignUpAd"));
 
 const Home = () => {
   return (
-    <div className="flex flex-col font-sans bg-white">
+    <div className="flex flex-col bg-white">
       <div className="relative">
-        <Header />
         <HeroSection />
-        <Feature />
-        <SignUpAd />
-        <FAQ />
-      </div>
-      <div className="pt-32">
-        <Footer />
+
+        <Suspense fallback={<FeatureSkeleton />}>
+          <Feature />
+        </Suspense>
+
+        <Suspense fallback={<SignUpAdSkeleton />}>
+          <SignUpAd />
+        </Suspense>
+
+        <Suspense fallback={<FAQSkeleton />}>
+          <FAQ />
+        </Suspense>
       </div>
     </div>
   );

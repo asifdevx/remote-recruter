@@ -20,27 +20,29 @@ export default function Footer() {
         <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-6 pb-2">
           {/* Logo brand structure */}
           <div className="flex items-center gap-1.5 select-none text-white font-black text-2xl tracking-tight pointer-events-none">
-            <img src="/assets/logo/RemoteRecruit.png" alt="RemoteRecruit Logo" className="w-full h-full object-contain" />
+            <img src="/assets/logo/RemoteRecruit.webp" alt="RemoteRecruit Logo" className="w-full h-full object-contain" />
           </div>
 
           {/* Social Links Grid */}
           <div className="flex items-center gap-3">
-            {socials.map(({ href, Icon }, idx) => (
+            {socials.map(({ href, label, Icon }, idx) => (
               <a
                 key={idx}
                 href={href}
+                aria-label={label}
+                title={label}
                 className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {Icon && <Icon size={15} className="text-white" />}
+                {Icon && <Icon size={15} className="text-white" aria-hidden="true" />}
               </a>
             ))}
           </div>
         </div>
 
         <div className="w-full border-t border-white/10 h-full pt-10 items-center flex justify-center">
-          <img src="/assets/logo/logo.png" alt=" Logo" className="w-10 h-10 object-contain" />
+          <img src="/assets/logo/logo.webp" alt=" Logo" className="w-10 h-10 object-contain" />
         </div>
       </div>
     </footer>

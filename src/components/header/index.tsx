@@ -35,7 +35,7 @@ const Header = () => {
       <div className="flex items-center justify-between max-w-360 mx-auto">
         {/* Logo */}
         <Link to="/" className="shrink-0">
-          <img src="/assets/logo/RemoteRecruit.png" alt="RemoteRecruit Logo" className="w-30.75 h-12.5 object-contain" />
+          <img src="/assets/logo/RemoteRecruit.webp" alt="RemoteRecruit Logo" className="w-30.75 h-12.5 object-contain" />
         </Link>
 
         {/* Desktop nav */}

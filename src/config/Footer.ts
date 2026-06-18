@@ -19,7 +19,7 @@ export const pricingPlans = [
   {
     id: "premium",
     isPremium: true,
-      price: "$79.99",
+    price: "$79.99",
     subtitle: "Per Month",
     ctaLabel: "Get Started",
     features: [
@@ -31,11 +31,10 @@ export const pricingPlans = [
   },
 ];
 
-
 export const socials = [
-  { href: "https://www.facebook.com", Icon: FaFacebookF },
-  { href: "https://www.x.com", Icon: BsTwitter },
-  { href: "https://www.instagram.com", Icon: FaInstagram },
-  { href: "https://www.snapchat.com", Icon: FaSnapchatGhost },
-  { href: "https://www.linkedin.com", Icon: GrLinkedinOption },
+  { href: "https://www.facebook.com", label: "Facebook", Icon: FaFacebookF },
+  { href: "https://www.x.com", label: "X (Twitter)", Icon: BsTwitter },
+  { href: "https://www.instagram.com", label: "Instagram", Icon: FaInstagram },
+  { href: "https://www.snapchat.com", label: "Snapchat", Icon: FaSnapchatGhost },
+  { href: "https://www.linkedin.com", label: "LinkedIn", Icon: GrLinkedinOption },
 ];

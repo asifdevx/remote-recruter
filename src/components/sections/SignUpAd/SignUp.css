@@ -2,7 +2,7 @@
 
 .signUpAd_section {
   @apply relative w-full overflow-hidden  min-h-160 bg-cover bg-center bg-no-repeat;
-  background-image: url("/assets/signUpAd/background.png");
+  background-image: url("/assets/signUpAd/background.webp");
 }
 
 

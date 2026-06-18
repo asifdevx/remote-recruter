@@ -24,7 +24,7 @@ function DashboardPanel({ animate }: { animate: boolean }) {
             />
 
             <img
-              src="/assets/signUpAd/dashboard.png"
+              src="/assets/signUpAd/dashboard.webp"
               alt="dashboard preview"
               className={cn("absolute inset-0 w-full h-full object-cover rounded-t-xl transition-opacity duration-700", loaded ? "opacity-100" : "opacity-0")}
               loading="eager"
