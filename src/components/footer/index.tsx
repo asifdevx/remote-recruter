@@ -9,11 +9,9 @@ export default function Footer() {
       <div className="w-full max-w-7xl mx-auto flex flex-col items-center mb-20 -mt-24 sm:-mt-32 lg:-mt-40 relative z-10 px-6">
         <h2 className="text-[#11142D] font-semibold text-3xl sm:text-4xl text-center mb-12 lg:mb-16 tracking-tight">Help Is One Click Away</h2>
 
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-stretch justify-center gap-8 lg:flex-row lg:gap-6">
+        <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center  lg:flex-row gap-6 lg:gap-8 ">
           {pricingPlans.map((plan) => (
-            <div key={plan.id} className="flex flex-1">
-              <PricingCard isPremium={plan.isPremium} price={plan.price} subtitle={plan.subtitle} features={plan.features} ctaLabel={plan.ctaLabel} />
-            </div>
+            <PricingCard isPremium={plan.isPremium} price={plan.price} subtitle={plan.subtitle} features={plan.features} ctaLabel={plan.ctaLabel} />
           ))}
         </div>
       </div>
@@ -41,7 +39,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom divider and brand asset marker */}
         <div className="w-full border-t border-white/10 h-full pt-10 items-center flex justify-center">
           <img src="/assets/logo/logo.png" alt=" Logo" className="w-10 h-10 object-contain" />
         </div>

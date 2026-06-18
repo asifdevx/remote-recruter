@@ -118,6 +118,7 @@
 html,
 body,
 #root {
+  scroll-behavior: smooth;
   font-family: var(--font-sans);
   scrollbar-width: thin;
   scrollbar-color: #94a3b8 #f1f5f9;

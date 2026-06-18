@@ -33,9 +33,9 @@ export const pricingPlans = [
 
 
 export const socials = [
-  { href: "#", Icon: FaFacebookF },
-  { href: "#", Icon: BsTwitter },
-  { href: "#", Icon: FaInstagram },
-  { href: "#", Icon: FaSnapchatGhost },
-  { href: "#", Icon: GrLinkedinOption },
+  { href: "https://www.facebook.com", Icon: FaFacebookF },
+  { href: "https://www.x.com", Icon: BsTwitter },
+  { href: "https://www.instagram.com", Icon: FaInstagram },
+  { href: "https://www.snapchat.com", Icon: FaSnapchatGhost },
+  { href: "https://www.linkedin.com", Icon: GrLinkedinOption },
 ];

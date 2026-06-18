@@ -5,54 +5,30 @@
   background-image: url("/assets/signUpAd/background.png");
 }
 
-@keyframes hero-from-left {
-  from {
-    opacity: 0;
-    transform: translateX(-60px) translateY(32%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) translateY(32%);
-  }
+
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes hero-from-right {
-  from {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes hero-item-up {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Subtle, high-end floating effect */
 @keyframes hero-float {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
   }
 }
 
 @keyframes hero-shimmer {
-  from {
-    background-position: -200% 0;
-  }
-  to {
-    background-position: 200% 0;
-  }
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
 }

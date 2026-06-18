@@ -17,15 +17,15 @@ interface PricingCardProps {
 
 export const PricingCard = ({ isPremium = false, features, ctaLabel, price, subtitle }: PricingCardProps) => {
   return (
-    <div className="w-full max-w-120 bg-white rounded-4xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_15px_50px_-15px_rgba(0,0,0,0.1)] border border-slate-100 transition-all duration-300 hover:-translate-y-1">
+    <div className="w-full  bg-white rounded-4xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_15px_50px_-15px_rgba(0,0,0,0.1)] border border-slate-100 transition-all duration-300 hover:-translate-y-1">
       <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center mb-8">
         <div className="relative w-full sm:w-37.5 aspect-4/3 sm:aspect-square rounded-2xl bg-[#ECF2FF] flex flex-col items-center justify-center p-4 shrink-0 ">
           {isPremium && (
-            <div className="w-[90%] absolute -top-5 px-3 py-1 rounded-full bg-[#C2EEFF] backdrop-blur-xs border border-blue-100 flex items-center gap-1.5 shadow-sm drop-shadow-[0_0_12px_rgba(30,62,133,0.25)]">
+            <div className="sm:w-[90%] w-1/3 absolute -top-5 px-1 py-1 rounded-full bg-[#C2EEFF] backdrop-blur-xs border border-blue-100 flex items-center gap-1.5 shadow-sm drop-shadow-[0_0_12px_rgba(30,62,133,0.25)]">
               <div className="py-2 px-3 bg-white rounded-full">
                 <img src="assets/icon/premium.svg" alt="Premium" className="" />
               </div>
-              <span className="text-[10px] font-bold text-slate-700 tracking-wide uppercase">Premium</span>
+              <span className="text-[16px] font-bold text-slate-700 tracking-wide uppercase">Premium</span>
             </div>
           )}
           <div className="flex min-h-18 flex-col justify-center items-center">
