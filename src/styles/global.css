@@ -140,3 +140,10 @@ body,
 ::-webkit-scrollbar-thumb:hover {
   background: #64748b;
 }
+
+
+
+.footer-section {
+  @apply w-full bg-top bg-cover bg-no-repeat  pb-8 flex flex-col justify-between;
+  background-image: url("/assets/footer/bg.png");
+}

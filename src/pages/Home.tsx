@@ -1,23 +1,25 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
-import Feature from "@/components/sections/feature";
+import FAQ from "@/components/sections/FAQ";
+import Feature from "@/components/sections/Feature";
 import HeroSection from "@/components/sections/HeroSection";
-import SignUpAd from "@/components/sections/signUpAd";
+import SignUpAd from "@/components/sections/SignUpAd";
 
 const Home = () => {
   return (
-    <div className="flex flex-col font-sans">
+    <div className="flex flex-col font-sans bg-white">
       <div className="relative">
         <Header />
         <HeroSection />
-        <Feature/>
+        <Feature />
         <SignUpAd />
-        <div className="min-h-screen bg-white " />
+        <FAQ />
       </div>
-      {/* <SmartFeatures /> */}
-      {/* <CtaSection /> */}
-      {/* <Footer /> */}
+      <div className="pt-32">
+        <Footer />
+      </div>
     </div>
   );
-}
+};
 
-export default Home
+export default Home;
