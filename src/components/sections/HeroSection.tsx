@@ -6,9 +6,8 @@ const bigScreen = useMediaQuery("(min-width: 1624px)");
 
 
   return (
-    <section className="relative w-full  flex items-center justify-center" style={{ minHeight: "clamp(500px, 48.89vw, 704px)" }}>
-      {/* SVG gradient background - exact Figma paths */}
-      <svg
+    <section className="relative w-full  flex items-center justify-center bg-white" style={{ minHeight: "clamp(500px, 48.89vw, 704px)" }}>
+       <svg
         className="absolute inset-0 w-full h-full pointer-events-none select-none"
         viewBox={`0 0 1440 ${bigScreen ? 900 : 704}`}
         preserveAspectRatio="xMidYMid slice"
